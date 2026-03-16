@@ -1,0 +1,235 @@
+
+:root {
+  --bg: #f3f0f7;
+  --card-bg: #fff;
+  --text: #2d2438;
+  --primary: #6b3fa0; 
+  --primary-hover: #54317d;
+  --secondary: #e9dcf7;
+  --muted: #6e657a;
+  --border: #dcd0eb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.site-header,
+.site-footer {
+  border-bottom: 1px solid var(--border);
+  background: var(--card-bg);
+  padding: 10px 0;
+}
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  border-bottom: none;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.site-title {
+  margin: 0;
+  font-size: 22px;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.site-nav {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+  list-style: none;
+  padding: 0;
+}
+
+.site-nav a {
+  color: var(--primary);
+  text-decoration: none;
+  padding: 8px 16px;
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  background: transparent;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.site-nav a:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+.card, .project {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 16px 0;
+  transition: transform 0.2s ease;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+}
+
+.project-title {
+  margin: 0 0 8px;
+  font-size: 18px;
+  color: var(--primary);
+}
+
+/* Layout Fix: Image under text box */
+.hero-grid {
+  display: flex;
+  flex-direction: column; /* This stacks them vertically */
+  gap: 20px;
+}
+
+.hero-media {
+  order: 2; /* Ensures image is below the text */
+}
+
+.hero-copy {
+  order: 1;
+}
+
+/* Optional: keeps it stacked even on big screens if you prefer */
+@media (min-width: 800px) {
+  .hero-grid {
+    display: flex; 
+    flex-direction: column;
+  }
+}
+
+.hero-image,
+.profile-image {
+  display: block;
+  margin-top: 12px;
+  max-width: 100%;
+  height: auto;
+  border: 1px dashed var(--primary);
+  border-radius: 10px;
+}
+
+.contact-form {
+  margin-top: 12px;
+  display: grid;
+  gap: 12px;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+}
+
+.field-label {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.field-input {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font: inherit;
+}
+
+.field-input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: var(--primary-hover);
+}
+
+.hero-kicker {
+  color: var(--primary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 8px;
+  font-size: 14px;
+}
+
+.hero-title {
+  margin: 0 0 10px;
+  font-size: 32px;
+  line-height: 1.2;
+}
+
+.hero-text {
+  margin: 0 0 14px;
+  color: var(--muted);
+}
+
+.tag-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  border: 1px solid var(--primary);
+  border-radius: 999px;
+  padding: 5px 12px;
+  background: var(--secondary);
+  font-size: 13px;
+  color: var(--primary);
+}
+
+.hero-banner {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+.project-grid {
+  display: grid;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+@media (min-width: 800px) {
+  .project-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.project-text {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
